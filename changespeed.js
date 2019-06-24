@@ -84,11 +84,9 @@ Object.assign(MediaElementPlayer.prototype, {
       return parseFloat(a.value) - parseFloat(b.value);
     });
 
-    const hasSpeedLowerThanDefault = speeds.some(function(v) {
-      return parseFloat(v.value) < parseFloat(t.options.defaultSpeed, 10);
+    index = speeds.findIndex(function(speed) {
+      return speed.value === t.options.defaultSpeed;
     });
-
-    index = hasSpeedLowerThanDefault ? 1 : 0;
 
     t.cleanchangespeed(player);
 
