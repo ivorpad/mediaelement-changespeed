@@ -109,7 +109,7 @@ Object.assign(MediaElementPlayer.prototype, {
       index++;
       index %= speeds.length;
       media.playbackRate = parseFloat(speeds[index].value);
-      this.firstElementChild.innerText = speeds[index].value;
+      this.firstElementChild.innerText = speeds[index].value + t.options.speedChar;
     });
 
     media.addEventListener("loadedmetadata", () => {
